@@ -1,0 +1,130 @@
+@keyframes glitchAnimation{
+  6.66666667% {
+    clip: rect(76px, 9999999px, 132px, 0);
+  }
+  10% {
+    clip: rect(13px, 9999999px, 82px, 0);
+  }
+  13.33333333% {
+    clip: rect(97px, 9999999px, 2px, 0);
+  }
+  16.66666667% {
+    clip: rect(1px, 9999999px, 147px, 0);
+  }
+  20% {
+    clip: rect(113px, 9999999px, 124px, 0);
+  }
+  30% {
+    clip: rect(2px, 9999999px, 10px, 0);
+  }
+  36.66666667% {
+    clip: rect(140px, 9999999px, 79px, 0);
+  }
+  40% {
+    clip: rect(37px, 9999999px, 67px, 0);
+  }
+  46.66666667% {
+    clip: rect(6px, 9999999px, 16px, 0);
+  }
+  50% {
+    clip: rect(98px, 9999999px, 123px, 0);
+  }
+  56.66666667% {
+    clip: rect(77px, 9999999px, 110px, 0);
+  }
+  60% {
+    clip: rect(22px, 9999999px, 145px, 0);
+  }
+  66.66666667% {
+    clip: rect(109px, 9999999px, 135px, 0);
+  }
+  70% {
+    clip: rect(118px, 9999999px, 40px, 0);
+  }
+  73.33333333% {
+    clip: rect(74px, 9999999px, 141px, 0);
+  }
+  76.66666667% {
+    clip: rect(59px, 9999999px, 100px, 0);
+  }
+  80% {
+    clip: rect(14px, 9999999px, 32px, 0);
+  }
+  90% {
+    clip: rect(33px, 9999999px, 97px, 0);
+  }
+  93.33333333% {
+    clip: rect(94px, 9999999px, 29px, 0);
+  }
+  100% {
+    clip: rect(5px, 9999999px, 14px, 0);
+  }
+}
+
+@keyframes goupAnimation{
+  0%{
+    transform: translateY(0em);
+  }
+  25%{
+    transform: translateY(-2.1em);
+  }
+  
+  50%{
+    transform: translateY(-4.2em);
+  }
+  
+  75%{
+    transform: translateY(-6.3em);
+  
+  }
+  100%{
+    transform: translateY(-8.4em);
+  }
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+
+  .glitch{
+    position: relative;
+    display: inline-block;
+    text-transform: uppercase;
+    color: white;
+
+    &::before, &::after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      color: #33F0C2;
+    }
+
+    &::before {
+      left: 2px;
+      text-shadow: -2px 0 blue;
+      animation: glitchAnimation 2.5s infinite linear alternate-reverse;
+      clip: rect(24px, 9999px, 90px, 0);
+    }
+
+    &::after {
+      left: -2px;
+      text-shadow: -2px 0 red;
+      animation: glitchAnimation 2.5s infinite linear alternate-reverse;
+      clip: rect(36px, 9999px, 140px, 0);
+    }
+  }
+
+
+  div.goup{
+    height: 2.2em;
+    //overflow: hidden;
+    overflow: hidden;
+    .goup2{
+      animation: goupAnimation 5s cubic-bezier(.32,.85,.27,.11) infinite alternate;
+      font-weight: bolder;
+    }
+  }
+}
